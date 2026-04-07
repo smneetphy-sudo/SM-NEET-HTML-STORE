@@ -237,6 +237,42 @@ body { display:flex; height:100vh; overflow:hidden; }
     font-weight:bold;
     display:block;
 }	
+
+
+
+
+
+
+
+/* MOVING NOTICE BAR */
+#noticeBar{
+  position:absolute;
+  top:0;
+  left:0;
+  width:100%;
+  overflow:hidden;
+  background:#ffff66;   /* yellow background */
+  z-index:50;
+  pointer-events:none;
+  padding:2px 0;
+}
+
+#noticeText{
+  white-space:nowrap;
+  color:#ff0000;        /* red text */
+  font-size:12px;       /* small font */
+  font-weight:bold;
+  animation:scrollNotice 20s linear infinite;
+}
+
+@keyframes scrollNotice{
+  from { transform: translateX(100%); }
+  to { transform: translateX(-100%); }
+}
+
+
+
+
 	
 </style>
 </head>
@@ -657,6 +693,37 @@ body { display:flex; height:100vh; overflow:hidden; }
 </div> <!-- CLOSE SIDEBAR -->
 
 <div id="viewer" role="main" aria-label="Document viewer">
+
+
+
+
+
+
+
+
+
+
+<div id="noticeBar">
+  <div id="noticeText">
+  Our website is currently under development. Study materials are being uploaded regularly. 
+  If you need any specific chapter, practice test, or question, please call 9706380357. 
+  We will upload it on a priority basis.
+  </div>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
   <div id="imgWrapper">
     <img id="contentImg" src="" alt="Page" decoding="async" loading="eager">
 
@@ -684,6 +751,11 @@ onclick="window.open('https://ai-question-and-its-solution-3oip.onrender.com')">
 pdfjsLib.GlobalWorkerOptions.workerSrc = 'https://cdnjs.cloudflare.com/ajax/libs/pdf.js/2.16.105/pdf.worker.min.js';
 
 /* ================= DATA (preserved) ================= */
+
+
+
+
+
 let data = {
 
 	 "C1211_C1211":[
@@ -1102,6 +1174,14 @@ let data = {
 	
  
 };
+
+
+
+
+
+
+
+
 /* ================= STATE VARS ================= */
 let currentList = [], index = 0;
 let currentCode = "";   // ⭐ ADD THIS LINE
@@ -1778,4 +1858,3 @@ bookmarkBtn.addEventListener("click", function(){
 </body>
 
 </html>
-
